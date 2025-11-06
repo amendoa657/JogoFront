@@ -22,6 +22,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.name=="Player"):
 		$bindInteracao.visible=false
 		playerDentro=false
+		body.disconnect("interact", Callable(self, "_on_player_interact"))
+		disconnect("player_sit", Callable(body, "_on_bench_player_sit"))
 		
 func _on_player_interact(player):
 	emit_signal("player_sit", self)
