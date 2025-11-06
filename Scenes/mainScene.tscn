@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://cxbuvy7m8clih"]
+[gd_scene load_steps=53 format=4 uid="uid://cxbuvy7m8clih"]
 
 [ext_resource type="Script" uid="uid://drql83er1jmi4" path="res://Scripts/main_scene.gd" id="1_4djc3"]
 [ext_resource type="PackedScene" uid="uid://c0hooqxx3uefi" path="res://Scenes/player.tscn" id="1_yyxd1"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bw3mbq2tsimxc" path="res://Sprites/placa.png" id="10_l0d1b"]
 [ext_resource type="Texture2D" uid="uid://bs8qksbfb0c02" path="res://Sprites/placaCpp.png" id="11_w8a2l"]
 [ext_resource type="Texture2D" uid="uid://cqr02wnmxeql1" path="res://Sprites/placaNova.png" id="18_ekaqe"]
+[ext_resource type="PackedScene" uid="uid://camx6u1a4imfi" path="res://Scenes/ze_gotinha.tscn" id="22_iypob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi7nq"]
 size = Vector2(75, 58.75)
@@ -4770,6 +4771,9 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAaABIAAAADAAkAAAAjAA4AAAADAAkAAAAYAAgAAAABAAAAAAAnAAkAAAABAAAAAAApABUAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_l42ic")
 y_sort_origin = 55
+
+[node name="ZeGotinha" parent="." instance=ExtResource("22_iypob")]
+position = Vector2(1034, 497)
 
 [node name="Player" parent="." instance=ExtResource("1_yyxd1")]
 z_index = 2

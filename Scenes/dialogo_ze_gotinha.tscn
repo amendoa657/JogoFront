@@ -1,8 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjrxvu44j3eud"]
-
-[ext_resource type="Texture2D" uid="uid://chxbuj7na13fj" path="res://Sprites/amendoa.png" id="1_2ixdo"]
+[gd_scene format=3 uid="uid://bjrxvu44j3eud"]
 
 [node name="Control" type="Control"]
+z_index = 99
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +11,13 @@ offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Amendoa" type="Sprite2D" parent="."]
-position = Vector2(675.75, 403.5)
-scale = Vector2(31.140625, 9.21875)
-texture = ExtResource("1_2ixdo")
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_top = 445.0
+offset_right = 1278.0
+offset_bottom = 718.0
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dapibus dui, ac bibendum magna. Nullam eu auctor sem. Duis condimentum faucibus lectus. Cras ultricies velit non nisl convallis, a interdum ligula posuere. In lobortis blandit eros laoreet mattis. Pellentesque luctus fringilla bibendum. Mauris metus urna, rhoncus et dignissim non, congue a risus. Suspendisse porta convallis orci vitae vestibulum. Aliquam id tellus sed justo eleifend hendrerit. Nullam a nibh quis justo gravida vulputate et in enim. Proin vel tristique eros, non pellentesque tellus. Nam tristique dui tortor, ut dictum metus porta lobortis."
+autowrap_mode = 3
