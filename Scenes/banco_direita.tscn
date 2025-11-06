@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://rytsc8q4l1wm"]
+
+[ext_resource type="Script" uid="uid://ww6if45b2tvr" path="res://Scripts/banco_direita.gd" id="1_hk42s"]
+[ext_resource type="Texture2D" uid="uid://njrejnb50png" path="res://Sprites/bancos/bancoDireita.png" id="2_dbyrf"]
+[ext_resource type="Texture2D" uid="uid://de0nf5u0kqh4j" path="res://Sprites/keyE/fe6e22b6-42db-428a-ba15-528376287536.png" id="3_qmm4e"]
+[ext_resource type="Texture2D" uid="uid://cem6x6482xqgd" path="res://Sprites/keyE/ac6bfa04-0348-43ed-80e4-4a39874762c5.png" id="4_px47y"]
+[ext_resource type="Script" uid="uid://c371vcjni1klt" path="res://Scripts/bind_interacao.gd" id="5_kclxy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qfsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qmm4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_px47y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45spp"]
+size = Vector2(17.375, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he253"]
+size = Vector2(48, 79)
+
+[node name="bancoDireita" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+script = ExtResource("1_hk42s")
+
+[node name="BancoDireita" type="Sprite2D" parent="."]
+position = Vector2(4.5, -5.5)
+texture = ExtResource("2_dbyrf")
+
+[node name="bindInteracao" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 99
+position = Vector2(0, -47)
+sprite_frames = SubResource("SpriteFrames_3qfsu")
+script = ExtResource("5_kclxy")
+amplitude = 2.0
+speed = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.1875, 4.25)
+shape = SubResource("RectangleShape2D_45spp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_he253")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

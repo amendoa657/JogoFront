@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://cxbuvy7m8clih"]
+[gd_scene load_steps=52 format=4 uid="uid://cxbuvy7m8clih"]
 
 [ext_resource type="Script" uid="uid://drql83er1jmi4" path="res://Scripts/main_scene.gd" id="1_4djc3"]
 [ext_resource type="PackedScene" uid="uid://c0hooqxx3uefi" path="res://Scenes/player.tscn" id="1_yyxd1"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://neg7ibptai8i" path="res://Sprites/TX Tileset Wall.png" id="5_mhr8t"]
 [ext_resource type="Texture2D" uid="uid://phhxt4gf4ddx" path="res://Sprites/TX Shadow Plant.png" id="5_uvydw"]
 [ext_resource type="Texture2D" uid="uid://dx1flu6qi26vx" path="res://Sprites/TX Plant.png" id="6_l0d1b"]
+[ext_resource type="PackedScene" uid="uid://rytsc8q4l1wm" path="res://Scenes/banco_direita.tscn" id="7_ekaqe"]
 [ext_resource type="Texture2D" uid="uid://bw3mbq2tsimxc" path="res://Sprites/placa.png" id="10_l0d1b"]
 [ext_resource type="Texture2D" uid="uid://bs8qksbfb0c02" path="res://Sprites/placaCpp.png" id="11_w8a2l"]
 [ext_resource type="Texture2D" uid="uid://cqr02wnmxeql1" path="res://Sprites/placaNova.png" id="18_ekaqe"]
@@ -4721,6 +4722,9 @@ script = ExtResource("5_iypob")
 amplitude = 2.0
 speed = 4.0
 
+[node name="bancoDireita" parent="." instance=ExtResource("7_ekaqe")]
+position = Vector2(844, 403)
+
 [node name="TileMaps" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -4749,7 +4753,7 @@ tile_set = SubResource("TileSet_08630")
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-14, -24)
-tile_map_data = PackedByteArray("AAAnABYAAgAcAAcAAAAfABYAAgAcAAcAAAAgAB0ABAAAAAAAAAAnAB0ABQAAAAAAAAARABsAAgAOAAUAAAAwABAAAgAOAAUAAAAZABIAAgAOAAUAAAAtABMAAgAOAAUAAAAqABsAAgAKAAkAAAAmAAwAAgAKAAkAAAAtABAAAgAKAAkAAAAgAA0AAgAKAAUAAAAoABIAAgAKAAUAAAA3ACAAAgAKAAUAAAALAB8AAgAKAAUAAAAxABgAAgAKAAkAAAA7ABsAAgAKAAkAAAAbABwAAgASAAEAAAA1ABgAAgAYAAAAAAATABgAAgAYAAYAAAA=")
+tile_map_data = PackedByteArray("AAAnABYAAgAcAAcAAAAfABYAAgAcAAcAAAAgAB0ABAAAAAAAAAAnAB0ABQAAAAAAAAARABsAAgAOAAUAAAAwABAAAgAOAAUAAAAZABIAAgAOAAUAAAAtABMAAgAOAAUAAAAqABsAAgAKAAkAAAAmAAwAAgAKAAkAAAAtABAAAgAKAAkAAAAgAA0AAgAKAAUAAAAoABIAAgAKAAUAAAA3ACAAAgAKAAUAAAALAB8AAgAKAAUAAAAxABgAAgAKAAkAAAA7ABsAAgAKAAkAAAAbABwAAgASAAEAAAATABgAAgAYAAYAAAA=")
 tile_set = SubResource("TileSet_uu6ay")
 y_sort_origin = 15
 
@@ -4770,7 +4774,7 @@ y_sort_origin = 55
 [node name="Player" parent="." instance=ExtResource("1_yyxd1")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(865, 474)
+position = Vector2(849, 452)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)

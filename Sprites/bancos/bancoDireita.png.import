@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kf65d3ejuub0"
-path="res://.godot/imported/amendoa1.png-086e37b9d6d79f2c9abcffd330518d21.ctex"
+uid="uid://njrejnb50png"
+path="res://.godot/imported/bancoDireita.png-d1c0a12f94c3848daf0305e3b6346809.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/amendoa1.png"
-dest_files=["res://.godot/imported/amendoa1.png-086e37b9d6d79f2c9abcffd330518d21.ctex"]
+source_file="res://Sprites/bancos/bancoDireita.png"
+dest_files=["res://.godot/imported/bancoDireita.png-d1c0a12f94c3848daf0305e3b6346809.ctex"]
 
 [params]
 
