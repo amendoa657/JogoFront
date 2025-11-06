@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0hooqxx3uefi"]
+
+[ext_resource type="Script" uid="uid://bwl8o6kua3syj" path="res://character_body_2d.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bsm1et612knuo" path="res://Sprites/amendoa/amendoa1.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://b8eljqc1mek50" path="res://Sprites/amendoa/amendoa2.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://7vpvchiuh1v5" path="res://Sprites/amendoa/amendoa3.png" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://crqdos3y3mljx" path="res://Sprites/amendoa/amendoa4.png" id="5_8erm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(20, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1ek2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fkybt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8erm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_vgqql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1.125, 1.125)
+sprite_frames = SubResource("SpriteFrames_f1ek2")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm0jys8syfitr"]
+
+[ext_resource type="Texture2D" uid="uid://bhm63fqb7nak7" path="res://Sprites/alert1.png" id="1_4pefn"]
+[ext_resource type="Texture2D" uid="uid://dbn3tkuinpklb" path="res://Sprites/alert2.png" id="2_i6h2h"]
+[ext_resource type="Texture2D" uid="uid://cnixl6adynu4u" path="res://Sprites/alert3.png" id="3_4osh1"]
+[ext_resource type="Texture2D" uid="uid://b62mope5klkbv" path="res://Sprites/alert4.png" id="4_7853m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikkld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4pefn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6h2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4osh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7853m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alert" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ikkld")
+frame_progress = 0.7871148
+speed_scale = 0.8
