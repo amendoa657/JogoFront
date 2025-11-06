@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://cxbuvy7m8clih"]
+[gd_scene load_steps=52 format=4 uid="uid://cxbuvy7m8clih"]
 
 [ext_resource type="Script" uid="uid://drql83er1jmi4" path="res://Scripts/main_scene.gd" id="1_4djc3"]
 [ext_resource type="PackedScene" uid="uid://c0hooqxx3uefi" path="res://Scenes/player.tscn" id="1_yyxd1"]
@@ -20,9 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bw3mbq2tsimxc" path="res://Sprites/placa.png" id="10_l0d1b"]
 [ext_resource type="Texture2D" uid="uid://bs8qksbfb0c02" path="res://Sprites/placaCpp.png" id="11_w8a2l"]
 [ext_resource type="Texture2D" uid="uid://cqr02wnmxeql1" path="res://Sprites/placaNova.png" id="18_ekaqe"]
-[ext_resource type="Texture2D" uid="uid://dfmxatcso8bjb" path="res://Sprites/Sakura.png" id="20_5bsxs"]
-[ext_resource type="PackedScene" uid="uid://camx6u1a4imfi" path="res://Scenes/ze_gotinha.tscn" id="22_iypob"]
-[ext_resource type="PackedScene" uid="uid://bjrxvu44j3eud" path="res://Scenes/dialogo_ze_gotinha.tscn" id="22_oi7nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi7nq"]
 size = Vector2(75, 58.75)
@@ -4683,23 +4680,12 @@ texture = ExtResource("3_mhr8t")
 1:0/0/y_sort_origin = 70
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(52, 125, 59.5, 125, 60.5, 145, 51, 144)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ew7i"]
-texture = ExtResource("20_5bsxs")
-use_texture_padding = false
-0:0/size_in_atlas = Vector2i(6, 8)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(-40, 0)
-0:0/0/y_sort_origin = -30
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
 [sub_resource type="TileSet" id="TileSet_l42ic"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_udkkk")
-sources/1 = SubResource("TileSetAtlasSource_7ew7i")
 
 [node name="MainScene" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(9, 17)
 script = ExtResource("1_4djc3")
 
 [node name="mostraTutorial2" type="Area2D" parent="."]
@@ -4781,21 +4767,14 @@ tile_set = SubResource("TileSet_boirm")
 [node name="TerrenoYSort" type="TileMapLayer" parent="TileMaps"]
 z_index = 2
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAaABIAAAADAAkAAAAjAA4AAAADAAkAAAAYAAgAAAABAAAAAAAnAAkAAAABAAAAAAApABUAAAABAAAAAABCABoAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAaABIAAAADAAkAAAAjAA4AAAADAAkAAAAYAAgAAAABAAAAAAAnAAkAAAABAAAAAAApABUAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_l42ic")
 y_sort_origin = 55
-
-[node name="ZeGotinha" parent="." instance=ExtResource("22_iypob")]
-z_index = 2
-position = Vector2(1004, 503)
-
-[node name="Control" parent="." instance=ExtResource("22_oi7nq")]
-clip_contents = true
 
 [node name="Player" parent="." instance=ExtResource("1_yyxd1")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(919, 493)
+position = Vector2(849, 452)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)
