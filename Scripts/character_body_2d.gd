@@ -19,6 +19,9 @@ func movimentacao():
 	
 	move_and_slide()
 
+func _ready() -> void:
+	$AnimatedSprite2D.animation="frente"
+
 func _process(delta: float) -> void:
 	if(movimentacaoHabilitada):
 		movimentacao()

@@ -14,3 +14,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y = base_y + sin(Time.get_ticks_msec() / 1000.0 * speed) * amplitude
+	
+	

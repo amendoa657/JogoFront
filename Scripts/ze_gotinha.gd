@@ -16,21 +16,34 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.name=="Player"):
 		playerDentro = false
-		#if(dialogoAberto):
-		#	fecharDialogo()
+		if(dialogoAberto):
+			fecharDialogo()
 	
-func _process(delta: float) -> void:	
+func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("ui_interact") and playerDentro):
 		if(dialogoAberto):
 			fecharDialogo()
 		else:
 			mostraDialogo()
 
+
+	if(Input.is_action_pressed("ui_interact")):
+		$bindInteracao.frame=1
+	else:
+		$bindInteracao.frame=0
+
+
+
+	if(playerDentro):
+		$bindInteracao.visible=true
+	else:
+		$bindInteracao.visible=false
+
 func mostraDialogo():
 	if(dialogoAberto==false):
 		instanciaDialogo = dialogo.instantiate()
 		print(instanciaDialogo)
-		get_tree().root.add_child(instanciaDialogo)
+		get_tree().root.get_node("MainScene/Dialog").add_child(instanciaDialogo)
 		instanciaDialogo.global_position = Vector2(0, 0)
 		dialogoAberto=true
 
