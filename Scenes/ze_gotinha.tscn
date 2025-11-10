@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://camx6u1a4imfi"]
 
 [ext_resource type="Script" uid="uid://dibwtj3824t2k" path="res://Scripts/ze_gotinha.gd" id="1_01g3c"]
-[ext_resource type="Texture2D" uid="uid://c45q2qak561ou" path="res://Sprites/ZeGotaPlaceHolder.png" id="1_wvc6u"]
 [ext_resource type="Texture2D" uid="uid://de0nf5u0kqh4j" path="res://Sprites/keyE/fe6e22b6-42db-428a-ba15-528376287536.png" id="3_swftb"]
 [ext_resource type="Texture2D" uid="uid://cem6x6482xqgd" path="res://Sprites/keyE/ac6bfa04-0348-43ed-80e4-4a39874762c5.png" id="4_2fxnd"]
 [ext_resource type="Script" uid="uid://c371vcjni1klt" path="res://Scripts/bind_interacao.gd" id="5_1iost"]
+[ext_resource type="Texture2D" uid="uid://yyt4slw1ubxx" path="res://Sprites/Zé gotinha.png" id="5_swftb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01g3c"]
-size = Vector2(32, 32)
+size = Vector2(13, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0n5h0"]
 animations = [{
@@ -29,19 +29,22 @@ size = Vector2(115, 95.5)
 [node name="ZeGotinha" type="StaticBody2D"]
 script = ExtResource("1_01g3c")
 
-[node name="ZeGotaPlaceHolder" type="Sprite2D" parent="."]
-texture = ExtResource("1_wvc6u")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 8.5)
 shape = SubResource("RectangleShape2D_01g3c")
 
 [node name="bindInteracao" type="AnimatedSprite2D" parent="."]
 z_index = 99
-position = Vector2(0, -47)
+position = Vector2(0, -33)
 sprite_frames = SubResource("SpriteFrames_0n5h0")
 script = ExtResource("5_1iost")
 amplitude = 2.0
 speed = 4.0
+
+[node name="ZéGotinha" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("5_swftb")
+offset = Vector2(1.32, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 

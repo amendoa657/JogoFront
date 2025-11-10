@@ -1,4 +1,16 @@
-[gd_scene format=3 uid="uid://bjrxvu44j3eud"]
+[gd_scene load_steps=5 format=3 uid="uid://bjrxvu44j3eud"]
+
+[ext_resource type="Script" uid="uid://qigqur7um80n" path="res://Scripts/dialogo_ze_gotinha.gd" id="1_2ixdo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijwen"]
+bg_color = Color(0.8447026, 0.4904787, 0.4006933, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyj2j"]
+bg_color = Color(0.7893679, 0.516248, 0.5073529, 1)
+
+[sub_resource type="Theme" id="Theme_ur8kc"]
+/styles/botao = SubResource("StyleBoxFlat_ijwen")
+Button/styles/normal = SubResource("StyleBoxFlat_jyj2j")
 
 [node name="Control" type="Control"]
 z_index = 99
@@ -7,17 +19,36 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 2.0
-offset_right = 2.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ixdo")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_top = 445.0
-offset_right = 1278.0
-offset_bottom = 718.0
+offset_left = -1.0
+offset_top = 799.0
+offset_right = 1915.0
+offset_bottom = 1075.0
 
 [node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dapibus dui, ac bibendum magna. Nullam eu auctor sem. Duis condimentum faucibus lectus. Cras ultricies velit non nisl convallis, a interdum ligula posuere. In lobortis blandit eros laoreet mattis. Pellentesque luctus fringilla bibendum. Mauris metus urna, rhoncus et dignissim non, congue a risus. Suspendisse porta convallis orci vitae vestibulum. Aliquam id tellus sed justo eleifend hendrerit. Nullam a nibh quis justo gravida vulputate et in enim. Proin vel tristique eros, non pellentesque tellus. Nam tristique dui tortor, ut dictum metus porta lobortis."
+horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 1668.0
+offset_top = 185.0
+offset_right = 1906.0
+offset_bottom = 266.0
+theme = SubResource("Theme_ur8kc")
+text = "aperta
+"
+
+[connection signal="pressed" from="PanelContainer/Panel/Button" to="." method="_on_button_pressed"]

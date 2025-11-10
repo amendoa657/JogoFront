@@ -16,15 +16,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.name=="Player"):
 		playerDentro = false
-		if(dialogoAberto):
-			fecharDialogo()
+		#if(dialogoAberto):
+			#fecharDialogo()
 	
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("ui_interact") and playerDentro):
-		if(dialogoAberto):
-			fecharDialogo()
+		if OS.has_feature("web"):
+			JavaScriptBridge.get_interface("window").call("AbrirInformacoesZeGotinha")
 		else:
-			mostraDialogo()
+			print("Fora da web (Editor), pulando chamada JS.")
 
 
 	if(Input.is_action_pressed("ui_interact")):
@@ -39,17 +39,17 @@ func _process(delta: float) -> void:
 	else:
 		$bindInteracao.visible=false
 
-func mostraDialogo():
-	if(dialogoAberto==false):
-		instanciaDialogo = dialogo.instantiate()
-		print(instanciaDialogo)
-		get_tree().root.get_node("MainScene/Dialog").add_child(instanciaDialogo)
-		instanciaDialogo.global_position = Vector2(0, 0)
-		dialogoAberto=true
-
-
-func fecharDialogo():
-	print("fechando dialogo")
-	dialogoAberto=false
-	instanciaDialogo.queue_free()
-	instanciaDialogo = null
+#func mostraDialogo():
+	#if(dialogoAberto==false):
+		#instanciaDialogo = dialogo.instantiate()
+		#print(instanciaDialogo)
+		#get_tree().root.get_node("MainScene/Dialog").add_child(instanciaDialogo)
+		#instanciaDialogo.global_position = Vector2(0, 0)
+		#dialogoAberto=true
+#
+#
+#func fecharDialogo():
+	#print("fechando dialogo")
+	#dialogoAberto=false
+	#instanciaDialogo.queue_free()
+	#instanciaDialogo = null
