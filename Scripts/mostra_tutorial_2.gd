@@ -1,14 +1,10 @@
 extends Area2D
 
-var playerDentro = false
+
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.name=="Player"):
-		$bindInteracao.visible=true
-		playerDentro=true
+	$bindInteracao.visible=true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if(body.name=="Player"):
-		$bindInteracao.visible=false
-		playerDentro=false
+	$bindInteracao.visible=false

@@ -16,8 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.name=="Player"):
 		playerDentro = false
-		#if(dialogoAberto):
-			#fecharDialogo()
 	
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("ui_interact") and playerDentro):

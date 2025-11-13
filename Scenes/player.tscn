@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0hooqxx3uefi"]
+[gd_scene load_steps=10 format=3 uid="uid://c0hooqxx3uefi"]
 
 [ext_resource type="Script" uid="uid://bwl8o6kua3syj" path="res://Scripts/character_body_2d.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://b74ae8bf3gkpo" path="res://Sprites/sombra.png" id="2_8erm5"]
 [ext_resource type="Texture2D" uid="uid://dwh4wqyfe634o" path="res://Sprites/amendoa/amendoa1.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://cmkknrk824qr8" path="res://Sprites/amendoa/amendoa2.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://c8u5egjkdp5yf" path="res://Sprites/amendoa/amendoa3.png" id="4_3smsa"]
@@ -50,11 +49,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
-
-[node name="Sombra" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(0, 4)
-texture = ExtResource("2_8erm5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

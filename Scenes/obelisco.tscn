@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvhbfkimc6d3f"]
+
+[ext_resource type="Texture2D" uid="uid://iww7o5ul75a0" path="res://Sprites/obelisco.png" id="1_mtqht"]
+[ext_resource type="Texture2D" uid="uid://de0nf5u0kqh4j" path="res://Sprites/keyE/fe6e22b6-42db-428a-ba15-528376287536.png" id="2_w6gbj"]
+[ext_resource type="Texture2D" uid="uid://cem6x6482xqgd" path="res://Sprites/keyE/ac6bfa04-0348-43ed-80e4-4a39874762c5.png" id="3_uhc27"]
+[ext_resource type="Script" uid="uid://c371vcjni1klt" path="res://Scripts/bind_interacao.gd" id="4_l85ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3t8o"]
+size = Vector2(22, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymxsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w6gbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uhc27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtqht"]
+size = Vector2(92.5, 77.75)
+
+[node name="obelisco" type="StaticBody2D"]
+
+[node name="Obelisco" type="Sprite2D" parent="."]
+texture = ExtResource("1_mtqht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_e3t8o")
+
+[node name="bindInteracao" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 99
+position = Vector2(0, -33)
+sprite_frames = SubResource("SpriteFrames_ymxsf")
+script = ExtResource("4_l85ig")
+amplitude = 2.0
+speed = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mtqht")
